@@ -41,12 +41,20 @@
 	pinctrl-0 = <&pinctrl_ecspi1_1>;
 	status = "okay";
 
-        chip1: spidev@0 {
-               compatible = "spidev";
+	can-controller@0 {
+		compatible = "renesas,rh850";
+		reg = <0>;
+		interrupt-parent = <&tlmm>;
+		interrupts = <127 0>;
+		spi-max-frequency = <5000000>;
+	};
+
+/*        chip1: spidev@0 {
+               compatible = "renesas,rh850;
                spi-max-frequency = <12000000>;
                reg = <0>;
         };
-/*
+
         chip2: spidev@1 {
                compatible = "spidev";
                spi-max-frequency = <20000000>;
