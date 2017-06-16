@@ -44,6 +44,8 @@
 	can-controller@0 {
 		compatible = "renesas,rh850";
 		reg = <0>;
+		interrupt-parent = <&gpio1>;
+ 		interrupts = <5 IRQ_TYPE_EDGE_FALLING>;
 		spi-max-frequency = <5000000>;
 	};
 
